@@ -14,9 +14,9 @@ namespace Camada_Infra.Repositories
 
         private static List<Cliente> _cliente = new List<Cliente>
         {
-            new Cliente("Cliente 1", Guid.NewGuid()),
-            new Cliente("Cliente 2", Guid.NewGuid()),
-            new Cliente("Cliente 3", Guid.NewGuid())
+            new Cliente("Cliente 1", Guid.Parse("425626ea-65aa-4f4e-ac81-cbfe71a3f311")),
+            new Cliente("Cliente 2", Guid.Parse("f34b9d97-bdf3-4561-a35f-63a68bfb9cd3")),
+            new Cliente("Cliente 3", Guid.Parse("c84319e3-a5cc-409f-9fb6-1b67ea6e7feb"))
         };
 
         #endregion

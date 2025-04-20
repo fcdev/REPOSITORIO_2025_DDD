@@ -22,16 +22,26 @@ var clienteService = serviceProvider.GetService<IClienteService>();
 
 #endregion
 
-// Chamar o método GetAll
+
 if (clienteService != null) // Verificar se clienteService não é nulo
 {
     var clientes = clienteService.GetAll<Cliente>();
-    if (clientes != null) // Verificar se clientes não é nulo
+    if (clientes != null) 
     {
         foreach (var cliente in clientes)
         {
             Console.WriteLine($"ID: {cliente.ClienteId}, Nome: {cliente.Nome}");
         }
+    }
+    else
+    {
+        Console.WriteLine("Nenhum cliente encontrado.");
+    }
+
+    var objCliente = clienteService.GetClienteById(Guid.Parse("f34b9d97-bdf3-4561-a35f-63a68bfb9cd3"));
+    if (objCliente != null) 
+    {
+        Console.WriteLine($"\nID: {objCliente.ClienteId}, Nome: {objCliente.Nome}");
     }
     else
     {
