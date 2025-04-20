@@ -21,7 +21,7 @@ namespace Camada_Application.Services
 
         public Cliente GetClienteById(Guid clienteID)
         {
-            var model = _clienteRepository.GetClienteById(clienteID);
+            Cliente model = _clienteRepository.GetClienteById(clienteID);
             model.AlterarNome(model.Nome?.ToUpper());
             return model;
         }
