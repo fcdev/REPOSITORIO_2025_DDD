@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Camada_Domain\Camada_Domain.csproj" />
+    <ProjectReference Include="..\Camada_Infra\Camada_Infra.csproj" />
+  </ItemGroup>
+
 </Project>
