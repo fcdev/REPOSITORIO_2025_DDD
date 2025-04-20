@@ -22,7 +22,7 @@ namespace Camada_Application.Services
         public Cliente GetClienteById(Guid clienteID)
         {
             var model = _clienteRepository.GetClienteById(clienteID);
-            model.Nome?.ToUpper();
+            model.AlterarNome(model.Nome?.ToUpper());
             return model;
         }
     }
