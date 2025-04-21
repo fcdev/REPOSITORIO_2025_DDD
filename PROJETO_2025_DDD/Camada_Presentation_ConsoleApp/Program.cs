@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Camada_Application.Services;
+using Camada_Domain.Services;
 using Camada_Domain.Entities;
 using Camada_Domain.Interfaces.IRepositories;
 using Camada_Domain.Interfaces.IServices;

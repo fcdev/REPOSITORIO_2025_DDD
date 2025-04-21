@@ -1,10 +1,8 @@
 ﻿using Camada_Domain.Entities;
-using Camada_Domain.Interfaces;
 using Camada_Domain.Interfaces.IRepositories;
 using Camada_Domain.Interfaces.IServices;
-using Camada_Infra.Repositories;
 
-namespace Camada_Application.Services
+namespace Camada_Domain.Services
 {
     public class ClienteService : IClienteService
     {
