@@ -27,7 +27,7 @@ var clienteApp = serviceProvider.GetService<IClienteApp>();
 
 #region Camada_Application
 
-if (clienteApp != null) // Verificar se clienteService não é nulo
+if (clienteApp != null) // Verificar se serviceProvider não é nulo
 {
     var clientes = clienteApp.GetAll<ClienteDto>();
     if (clientes != null)
