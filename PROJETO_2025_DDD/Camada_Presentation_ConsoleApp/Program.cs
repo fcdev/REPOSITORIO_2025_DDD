@@ -9,7 +9,7 @@ using Camada_Domain.Services;
 using Camada_Infra.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Hello, World!\n");
 
 #region Config Ioc Di
 

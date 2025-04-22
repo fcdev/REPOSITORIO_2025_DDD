@@ -18,7 +18,7 @@ namespace Camada_Application.Services
         {
             var cliente = _clienteService.GetAll<Cliente>();
             if (cliente == null) throw new InvalidOperationException("Não pode ser nula.");
-            MapperApp.ClienteMapClienteDto(cliente, out List<ClienteDto> clienteDto);
+            Mapper.ClienteToClienteDto(cliente, out List<ClienteDto> clienteDto);
             return clienteDto as List<T> ?? throw new InvalidOperationException("Erro ao converter para o tipo genérico.");
         }
 
@@ -26,7 +26,7 @@ namespace Camada_Application.Services
         {
             var cliente = _clienteService.GetById(ClienteId);
             if (cliente == null) throw new InvalidOperationException("Não pode ser nula.");
-            MapperApp.ClienteMapClienteDto(cliente, out ClienteDto clienteDto);
+            Mapper.ClienteToClienteDto(cliente, out ClienteDto clienteDto);
             return clienteDto;
         }
     }
