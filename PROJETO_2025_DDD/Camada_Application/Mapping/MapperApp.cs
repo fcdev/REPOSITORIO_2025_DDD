@@ -43,7 +43,10 @@ namespace Camada_Application.Mapping
         public static void ClienteDtoMapCliente(ClienteDto clienteDto, out Cliente cliente)
         {
             if (clienteDto == null) throw new ArgumentNullException(nameof(clienteDto));
-            cliente = new Cliente(clienteDto.Nome, clienteDto.ClienteId);
+            cliente = new Cliente(
+                clienteDto.Nome, 
+                clienteDto.ClienteId
+                );
         }
 
         #endregion
