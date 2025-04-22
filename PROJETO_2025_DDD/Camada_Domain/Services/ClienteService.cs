@@ -9,7 +9,7 @@ namespace Camada_Domain.Services
         private readonly IClienteRepository _clienteRepository;
         public ClienteService(IClienteRepository clienteRepository)
         {
-            _clienteRepository = clienteRepository;
+            _clienteRepository = clienteRepository ?? throw new ArgumentNullException(nameof(clienteRepository));
         }
 
         public List<T> GetAll<T>() where T : class
@@ -17,10 +17,10 @@ namespace Camada_Domain.Services
             return _clienteRepository.GetAll<T>();
         }
 
-        public Cliente GetClienteById(Guid clienteID)
+        public Cliente GetById(Guid clienteID)
         {
-            Cliente model = _clienteRepository.GetClienteById(clienteID);
-            model.AlterarNome(model.Nome?.ToUpper());
+            Cliente model = _clienteRepository.GetById(clienteID);
+            model.AlterarNome(model.Nome?.ToUpper()); // Regra de negócio: Nome deve ser em maiúsculas
             return model;
         }
     }

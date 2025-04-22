@@ -1,5 +1,4 @@
 ﻿using Camada_Domain.Entities;
-using Camada_Domain.Interfaces;
 using Camada_Domain.Interfaces.IRepositories;
 
 namespace Camada_Infra.Repositories
@@ -8,7 +7,7 @@ namespace Camada_Infra.Repositories
     {
         public List<T> GetAll<T>() where T : class => _cliente.Cast<T>().ToList();
 
-        public Cliente GetClienteById(Guid clienteId) => _cliente.FirstOrDefault(c => c.ClienteId == clienteId) ?? throw new InvalidOperationException("Não encontrado.");
+        public Cliente GetById(Guid clienteId) => _cliente.FirstOrDefault(c => c.ClienteId == clienteId) ?? throw new InvalidOperationException("Não encontrado.");
 
         #region Simulador de Banco de Dados  
 
