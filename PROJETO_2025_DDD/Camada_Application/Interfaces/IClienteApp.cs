@@ -2,8 +2,9 @@
 
 namespace Camada_Application.Interfaces
 {
-    public interface IClienteApp : IBaseApp
+    public interface IClienteApp
     {
+        List<ClienteDto> GetAll();
         ClienteDto GetById(Guid ClienteId);
     }
 }

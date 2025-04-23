@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Camada_Application.Dtos;
 using Camada_Application.Interfaces;
 using Camada_Application.Services;
 using Camada_Domain.Interfaces.IRepositories;
@@ -29,7 +28,7 @@ var clienteApp = serviceProvider.GetService<IClienteApp>();
 
 if (clienteApp != null) // Verificar se serviceProvider não é nulo
 {
-    var clientes = clienteApp.GetAll<ClienteDto>();
+    var clientes = clienteApp.GetAll();
     if (clientes != null)
     {
         foreach (var cliente in clientes)

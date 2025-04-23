@@ -14,17 +14,17 @@ namespace Camada_Application.Services
             _clienteService = clienteService ?? throw new ArgumentNullException(nameof(clienteService));
         }
 
-        public List<T> GetAll<T>() where T : class
+        public List<ClienteDto> GetAll()
         {
-            var cliente = _clienteService.GetAll<Cliente>();
+            List<Cliente> cliente = _clienteService.GetAll<Cliente>();
             if (cliente == null) throw new InvalidOperationException("Não pode ser nula.");
             Mapper.ClienteToClienteDto(cliente, out List<ClienteDto> clienteDto);
-            return clienteDto as List<T> ?? throw new InvalidOperationException("Erro ao converter para o tipo genérico.");
+            return clienteDto;
         }
 
         public ClienteDto GetById(Guid ClienteId)
         {
-            var cliente = _clienteService.GetById(ClienteId);
+            Cliente cliente = _clienteService.GetById(ClienteId);
             if (cliente == null) throw new InvalidOperationException("Não pode ser nula.");
             Mapper.ClienteToClienteDto(cliente, out ClienteDto clienteDto);
             return clienteDto;
